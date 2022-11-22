@@ -6,18 +6,18 @@ from gendiff.diff import generate_diff
 @pytest.fixture
 def json():
     link = {}
-    link['before'] = './tests/fixtures/file1.json'
-    link['after'] = './tests/fixtures/file2.json'
-    link['result'] = './tests/fixtures/result_json.txt'
+    link['before'] = './tests/fixtures/file1_plain.json'
+    link['after'] = './tests/fixtures/file2_plain.json'
+    link['result'] = './tests/fixtures/result_plain.txt'
     return link
 
 
 @pytest.fixture
 def yaml():
     link = {}
-    link['before'] = './tests/fixtures/file1.yml'
-    link['after'] = './tests/fixtures/file2.yml'
-    link['result'] = './tests/fixtures/result_yaml.txt'
+    link['before'] = './tests/fixtures/file1_plain.yml'
+    link['after'] = './tests/fixtures/file2_plain.yml'
+    link['result'] = './tests/fixtures/result_plain.txt'
     return link
 
 
