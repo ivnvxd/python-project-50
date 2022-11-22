@@ -3,7 +3,7 @@ import yaml
 import os
 
 
-def generate_diff(file_path1, file_path2):
+def generate_diff(file_path1, file_path2, format=''):
 
     name1, ext1 = os.path.splitext(file_path1)
     name2, ext2 = os.path.splitext(file_path2)

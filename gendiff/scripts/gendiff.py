@@ -1,23 +1,19 @@
-import argparse
-from gendiff import generate_diff
+#!/usr/bin/env python3
+
+from typing import NoReturn
+from gendiff import generate_diff, parse_arguments
 
 
-parser = argparse.ArgumentParser(
-    description='Compares two configuration files and shows a difference.')
+def main() -> NoReturn:
+    """
+    "Gendiff" program entry point.
 
-parser.add_argument("first_file")
-parser.add_argument("second_file")
+    Output the result of the generate_diff() function.
 
-parser.add_argument(
-    '-f', '--format', help='set format of output'
-)
-
-args = parser.parse_args()
-
-
-def main():
-    diff = generate_diff(args.first_file, args.second_file)
-    print(diff)
+    :return: NoReturn
+    """
+    args = parse_arguments()
+    print(generate_diff(args.first_file, args.second_file, args.format))
 
 
 if __name__ == ('__main__'):
