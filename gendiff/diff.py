@@ -1,29 +1,17 @@
-import json
-import yaml
-import os
+from gendiff.file_handler import open_file
 
 
-def generate_diff(file_path1, file_path2, format=''):
+def generate_diff(file1_path: str, file2_path: str, format: str = '') -> str:
 
-    name1, ext1 = os.path.splitext(file_path1)
-    name2, ext2 = os.path.splitext(file_path2)
-
-    if ext1 == ext2:
-
-        if ext1 == '.json':
-            file1 = json.load(open(file_path1))
-            file2 = json.load(open(file_path2))
-
-        elif ext1 == '.yml' or ext1 == '.yaml':
-            file1 = yaml.safe_load(open(file_path1))
-            file2 = yaml.safe_load(open(file_path2))
+    file1 = open_file(file1_path)
+    file2 = open_file(file2_path)
 
     diff = get_diff(file1, file2)
 
     return render_diff(diff)
 
 
-def get_diff(file1, file2):
+def get_diff(file1: dict, file2: dict) -> list:
     keys = sorted(file1.keys() | file2.keys())
     diff = []
 
@@ -55,7 +43,7 @@ def get_diff(file1, file2):
     return diff
 
 
-def render_diff(diff):
+def render_diff(diff: list) -> str:
     difference = '{\n'
 
     for line in diff:
