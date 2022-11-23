@@ -1,54 +1,19 @@
 from gendiff.file_handler import open_file
+from gendiff.find_diff import get_diff_tree
+from gendiff.formatters.stylish import render_stylish
 
 
-def generate_diff(file1_path: str, file2_path: str, format: str = '') -> str:
+def generate_diff(file1_path: str, file2_path: str, format: str) -> str:
+    """
 
+    :param file1_path:
+    :param file2_path:
+    :param format:
+    :return:
+    """
     file1 = open_file(file1_path)
     file2 = open_file(file2_path)
 
-    diff = get_diff(file1, file2)
+    diff = get_diff_tree(file1, file2)
 
-    return render_diff(diff)
-
-
-def get_diff(file1: dict, file2: dict) -> list:
-    keys = sorted(file1.keys() | file2.keys())
-    diff = []
-
-    for key in keys:
-
-        if key in file1 and key not in file2:
-            if isinstance(file1[key], bool):
-                file1[key] = str(file1[key]).lower()
-            diff.append(f'- {key}: {file1[key]}')
-
-        elif key not in file1 and key in file2:
-            if isinstance(file2[key], bool):
-                file2[key] = str(file2[key]).lower()
-            diff.append(f'+ {key}: {file2[key]}')
-
-        elif file1[key] == file2[key]:
-            if isinstance(file1[key], bool):
-                file1[key] = str(file1[key]).lower()
-            diff.append(f'  {key}: {file1[key]}')
-
-        else:
-            if isinstance(file1[key], bool):
-                file1[key] = str(file1[key]).lower()
-            diff.append(f'- {key}: {file1[key]}')
-            if isinstance(file2[key], bool):
-                file2[key] = str(file2[key]).lower()
-            diff.append(f'+ {key}: {file2[key]}')
-
-    return diff
-
-
-def render_diff(diff: list) -> str:
-    difference = '{\n'
-
-    for line in diff:
-        difference += f'  {line}\n'
-
-    difference += '}'
-
-    return difference
+    return render_stylish(diff)
