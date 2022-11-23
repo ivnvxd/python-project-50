@@ -5,6 +5,7 @@ from gendiff.constants import (
     PLAIN
 )
 
+
 def parse_arguments():
     """
     Parses the data entered into the console to run the program.
