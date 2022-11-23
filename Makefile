@@ -1,9 +1,6 @@
 install:
 	poetry install
 
-# build:
-# 	poetry build
-
 test:
 	poetry run pytest
 
@@ -21,18 +18,16 @@ check: selfcheck test lint
 build: check
 	poetry build
 
-#.PHONY: install test lint selfcheck check build
+package-install:
+	pip install --user --force-reinstall dist/*.whl
 
 # publish:
 # 	poetry publish --dry-run
 
-package-install:
-	pip install --user --force-reinstall dist/*.whl
+stylish:
+	poetry run gendiff --f stylish ./tests/fixtures/json/file1_flat.json ./tests/fixtures/json/file2_flat.json
+	poetry run gendiff --format stylish ./tests/fixtures/json/file1_nested.json ./tests/fixtures/json/file2_nested.json
 
-test-plain:
-	poetry run gendiff ./tests/fixtures/file1_plain.json ./tests/fixtures/file2_plain.json
-	poetry run gendiff ./tests/fixtures/file1_plain.yml ./tests/fixtures/file2_plain.yml
-
-test-nested:
-	poetry run gendiff ./tests/fixtures/file1_nested.json ./tests/fixtures/file2_nested.json
-	poetry run gendiff ./tests/fixtures/file1_nested.yaml ./tests/fixtures/file2_nested.yaml
+plain:
+	poetry run gendiff --f plain ./tests/fixtures/json/file1_flat.json ./tests/fixtures/json/file2_flat.json
+	poetry run gendiff --format plain ./tests/fixtures/json/file1_nested.json ./tests/fixtures/json/file2_nested.json
