@@ -1,6 +1,6 @@
 # Difference Generator
 [![Actions Status](https://github.com/venyxD/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/venyxD/python-project-50/actions)
-![Lint and test check](https://github.com/venyxd/python-project-50/actions/workflows/lint-tests-check.yml/badge.svg)
+![Lint and test check](https://github.com/venyxd/python-project-50/actions/workflows/lint-and-test.yml/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e72f2ffcdbb2ab78dea7/maintainability)](https://codeclimate.com/github/venyxD/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e72f2ffcdbb2ab78dea7/test_coverage)](https://codeclimate.com/github/venyxD/python-project-50/test_coverage)
 ## Description
@@ -16,26 +16,35 @@
 ├── Makefile
 ├── README.md
 ├── coverage.xml
-├── dist
-│   ├── hexlet-code-0.1.0.tar.gz
-│   └── hexlet_code-0.1.0-py3-none-any.whl
 ├── gendiff
 │   ├── __init__.py
+│   ├── constants.py
 │   ├── diff.py
+│   ├── file_handler.py
+│   ├── find_diff.py
+│   ├── formatters
+│   │   └── stylish.py
+│   ├── parse_cli.py
 │   └── scripts
 │       ├── __init__.py
 │       └── gendiff.py
 ├── poetry.lock
 ├── pyproject.toml
 ├── setup.cfg
+└── tests
     ├── fixtures
-    │   ├── file1.json
-    │   ├── file1.yml
-    │   ├── file2.json
-    │   ├── file2.yml
-    │   ├── result_json.txt
-    │   └── result_plain_yaml.txt
+    │   ├── file1_nested.json
+    │   ├── file1_nested.yaml
+    │   ├── file1_plain.json
+    │   ├── file1_plain.yml
+    │   ├── file2_nested.json
+    │   ├── file2_nested.yaml
+    │   ├── file2_plain.json
+    │   ├── file2_plain.yml
+    │   ├── result_nested.txt
+    │   └── result_plain.txt
     └── test_gendiff.py
+
 ```
 ---
 
