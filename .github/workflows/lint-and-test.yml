@@ -1,4 +1,4 @@
-name: lint-and-tests-check
+name: lint-and-test
 
 on: 
   - push
