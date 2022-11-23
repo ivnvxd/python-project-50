@@ -29,6 +29,10 @@ build: check
 package-install:
 	pip install --user --force-reinstall dist/*.whl
 
-test-run:
+test-plain:
 	poetry run gendiff ./tests/fixtures/file1_plain.json ./tests/fixtures/file2_plain.json
 	poetry run gendiff ./tests/fixtures/file1_plain.yml ./tests/fixtures/file2_plain.yml
+
+test-nested:
+	poetry run gendiff ./tests/fixtures/file1_nested.json ./tests/fixtures/file2_nested.json
+	poetry run gendiff ./tests/fixtures/file1_nested.yaml ./tests/fixtures/file2_nested.yaml
