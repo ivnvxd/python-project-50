@@ -1,5 +1,9 @@
 import argparse
 
+from gendiff.constants import (
+    STYLISH,
+    PLAIN
+)
 
 def parse_arguments():
     """
@@ -14,11 +18,15 @@ def parse_arguments():
     parser = argparse.ArgumentParser(
         description='Compares two configuration files and shows a difference.')
 
-    parser.add_argument("first_file")
-    parser.add_argument("second_file")
+    parser.add_argument("first_file", type=str)
+    parser.add_argument("second_file", type=str)
 
     parser.add_argument(
-        '-f', '--format', help='set format of output'
+        '-f', '--format',
+        type=str,
+        help="set format of output (default: 'stylish')",
+        choices=[STYLISH, PLAIN],
+        default=STYLISH
     )
 
     args = parser.parse_args()

@@ -1,3 +1,6 @@
+STYLISH = 'stylish'
+PLAIN = 'plain'
+
 ADDED = 'added'
 REMOVED = 'removed'
 UNCHANGED = 'unchanged'
