@@ -4,7 +4,7 @@ import yaml
 
 def open_file(file_path: str) -> dict:
     """
-    Open file and return a stream.
+    Open file and load it to a dict.
 
     :param file_path: Path of the file to open.
     :return: Stream data from the opened file.
