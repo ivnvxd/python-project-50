@@ -13,7 +13,8 @@ def main() -> NoReturn:
     :return: NoReturn
     """
     args = parse_arguments()
-    print(generate_diff(args.first_file, args.second_file, args.format))
+    diff = generate_diff(args.first_file, args.second_file, args.format)
+    print(diff)
 
 
 if __name__ == '__main__':
