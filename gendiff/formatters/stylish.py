@@ -16,9 +16,10 @@ from gendiff.constants import (
 
 def render_stylish(diff: list) -> str:
     """
+    Rendering the difference tree in stylish format.
 
-    :param diff:
-    :return:
+    :param diff: Difference tree.
+    :return: String of difference visualization in stylish format.
     """
 
     def iter_(data: Any, depth: int = 0) -> str:
@@ -62,12 +63,13 @@ def render_stylish(diff: list) -> str:
 
 def render_line(key: Any, value: Any, sign: str, depth: int) -> str:
     """
+    Render one line of given data in proper format.
 
-    :param key:
-    :param value:
-    :param sign:
-    :param depth:
-    :return:
+    :param key: Name of node to render.
+    :param value: Value of current node.
+    :param sign: Sign, whether the node was added or removed ('+', '-' etc.)
+    :param depth: Indentation value of current line.
+    :return: Line of data to add to final render.
     """
 
     indent = ('    ' * depth)
@@ -90,10 +92,11 @@ def render_line(key: Any, value: Any, sign: str, depth: int) -> str:
 
 def render_dict(dict_: dict, depth: int) -> str:
     """
+    Render dict if it is nested as a value.
 
-    :param dict_:
-    :param depth:
-    :return:
+    :param dict_: Dictionary to render.
+    :param depth: Indentation value of current line.
+    :return: Line of data to add to final render.
     """
 
     lines = []
@@ -109,16 +112,17 @@ def render_dict(dict_: dict, depth: int) -> str:
 
 def convert(value: Any) -> str:
     """
+    Converts input data to unify it while comparing.
 
-    :param value:
-    :return:
+    :param value: Value to be converted.
+    :return: String in unified format.
     """
 
     if isinstance(value, bool):
-        converted_value = str(value).lower()
+        converted = str(value).lower()
     elif value is None:
-        converted_value = 'null'
+        converted = 'null'
     else:
-        converted_value = str(value)
+        converted = str(value)
 
-    return converted_value
+    return converted

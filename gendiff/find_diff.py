@@ -11,10 +11,11 @@ from gendiff.constants import (
 
 def get_diff_tree(file1: dict, file2: dict) -> list:
     """
+    Takes two files as dictionaries and finds the difference between them.
 
-    :param file1:
-    :param file2:
-    :return:
+    :param file1: First file as the Python dict object.
+    :param file2: Second file as the Python dict object.
+    :return: Difference tree as a list of dictionaries.
     """
 
     all_keys = sorted(set(file1.keys()) | set(file2.keys()))
@@ -47,13 +48,14 @@ def get_diff_tree(file1: dict, file2: dict) -> list:
 def add_node(key: Any, node_type: str, new_value: Any = None,
              old_value: Any = None, children: Any = None) -> dict:
     """
+    Accumulates all the parameters of one node and returns it in a dict.
 
-    :param key:
-    :param node_type:
-    :param new_value:
-    :param old_value:
-    :param children:
-    :return:
+    :param key: Name of the node.
+    :param node_type: Type of node (added, removed etc.)
+    :param new_value: New value of given key.
+    :param old_value: Previous value of given key.
+    :param children: List of children of current node if there are any.
+    :return: Dict of node parameters.
     """
 
     node = {

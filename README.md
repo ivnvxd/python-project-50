@@ -23,6 +23,8 @@
 │   ├── file_handler.py
 │   ├── find_diff.py
 │   ├── formatters
+│   │   ├── plain.py
+│   │   ├── render.py
 │   │   └── stylish.py
 │   ├── parse_cli.py
 │   └── scripts
@@ -33,18 +35,26 @@
 ├── setup.cfg
 └── tests
     ├── fixtures
-    │   ├── file1_nested.json
-    │   ├── file1_nested.yaml
-    │   ├── file1_plain.json
-    │   ├── file1_plain.yml
-    │   ├── file2_nested.json
-    │   ├── file2_nested.yaml
-    │   ├── file2_plain.json
-    │   ├── file2_plain.yml
-    │   ├── result_nested.txt
-    │   └── result_plain.txt
+    │   ├── json
+    │   │   ├── file1_flat.json
+    │   │   ├── file1_nested.json
+    │   │   ├── file2_flat.json
+    │   │   └── file2_nested.json
+    │   ├── result
+    │   │   ├── plain_flat.txt
+    │   │   ├── plain_nested.txt
+    │   │   ├── stylish_flat.txt
+    │   │   └── stylish_nested.txt
+    │   └── yaml
+    │       ├── file1_flat.yaml
+    │       ├── file1_flat.yml
+    │       ├── file1_nested.yaml
+    │       ├── file1_nested.yml
+    │       ├── file2_flat.yaml
+    │       ├── file2_flat.yml
+    │       ├── file2_nested.yaml
+    │       └── file2_nested.yml
     └── test_gendiff.py
-
 ```
 ---
 

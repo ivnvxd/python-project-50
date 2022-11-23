@@ -1,19 +1,21 @@
 from gendiff.file_handler import open_file
 from gendiff.find_diff import get_diff_tree
-from gendiff.formatters.stylish import render_stylish
+from gendiff.formatters.render import render
 
 
-def generate_diff(file1_path: str, file2_path: str, format: str) -> str:
+def generate_diff(file1: str, file2: str, format: str) -> str:
     """
+    Opens two files to be compared, calculates difference between them
+    and returns the difference in chosen format.
 
-    :param file1_path:
-    :param file2_path:
-    :param format:
-    :return:
+    :param file1: Path to the first file.
+    :param file2: Path to the second file.
+    :param format: Format of the output (stylish/plain)
+    :return: Visualized difference tree in chosen format.
     """
-    file1 = open_file(file1_path)
-    file2 = open_file(file2_path)
+    file1 = open_file(file1)
+    file2 = open_file(file2)
 
     diff = get_diff_tree(file1, file2)
 
-    return render_stylish(diff)
+    return render(diff, format)
