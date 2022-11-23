@@ -1,11 +1,12 @@
 from typing import Any
 
-
-ADDED = 'added'
-REMOVED = 'removed'
-UNCHANGED = 'unchanged'
-UPDATED = 'updated'
-NESTED = 'nested'
+from gendiff.constants import (
+    ADDED,
+    REMOVED,
+    UNCHANGED,
+    UPDATED,
+    NESTED,
+)
 
 
 def get_diff_tree(file1: dict, file2: dict) -> list:
