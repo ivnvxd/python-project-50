@@ -19,7 +19,7 @@ def load(path: str, file) -> dict:
     Loads data based on the passed extension.
 
     :param path: Path of file to load.
-    :param file: Stream data from the opened file
+    :param file: TextIO data from the opened file
     :returns: data (dict): Data from opened file im Python dictionary object.
     """
 

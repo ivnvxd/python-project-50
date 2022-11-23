@@ -36,14 +36,16 @@ def get_diff_tree(file1: dict, file2: dict) -> list:
             node = add_node(key, NESTED, children=child)
 
         else:
-            node = add_node(key, UPDATED, new_value=file2[key], old_value=file1[key])
+            node = add_node(key, UPDATED, new_value=file2[key],
+                            old_value=file1[key])
 
         tree.append(node)
 
     return tree
 
 
-def add_node(key: Any, node_type: str, new_value: Any = None, old_value: Any = None, children: Any = None) -> dict:
+def add_node(key: Any, node_type: str, new_value: Any = None,
+             old_value: Any = None, children: Any = None) -> dict:
     """
 
     :param key:

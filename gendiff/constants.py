@@ -6,3 +6,4 @@ NESTED = 'nested'
 
 TEMPLATE_NESTED = '{}    {}: {}'
 TEMPLATE_STYLISH = '{}  {} {}: {}'
+TEMPLATE_EMPTY = '{}  {} {}:'
