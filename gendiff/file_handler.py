@@ -2,7 +2,7 @@ import json
 import yaml
 
 
-def open_file(file_path):
+def open_file(file_path: str) -> dict:
     """
     Open file and return a stream.
 
@@ -10,7 +10,7 @@ def open_file(file_path):
     :return: Stream data from the opened file.
     """
 
-    with open(file_path) as file:
+    with open(file_path, 'r') as file:
         return load(file_path, file)
 
 
@@ -19,7 +19,7 @@ def load(path: str, file) -> dict:
     Loads data based on the passed extension.
 
     :param path: Path of file to load.
-    :param file: Stream data from the opened file.
+    :param file: Stream data from the opened file
     :returns: data (dict): Data from opened file im Python dictionary object.
     """
 
