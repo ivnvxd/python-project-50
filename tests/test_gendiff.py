@@ -45,18 +45,17 @@ def test_stylish_nested(files):
     assert generate_diff(files['file1_yaml_nested'], files['file2_yaml_nested'], 'stylish') == expected
 
 
-# def test_plain_flat(files):
-#     with open(files['plain_flat']) as file:
-#         expected = file.read()
-#     assert generate_diff(files['file1_json_flat'], files['file2_json_flat'], 'plain') == expected
-#     assert generate_diff(files['file1_yml_flat'], files['file2_yml_flat'], 'plain') == expected
-#     assert generate_diff(files['file1_yaml_flat'], files['file2_yaml_flat'], 'plain') == expected
-#
-#
-# def test_plain_nested(files):
-#     with open(files['plain_nested']) as file:
-#         expected = file.read()
-#     assert generate_diff(files['file1_json_nested'], files['file2_json_nested'], 'plain') == expected
-#     assert generate_diff(files['file1_yml_nested'], files['file2_yml_nested'], 'plain') == expected
-#     assert generate_diff(files['file1_yaml_nested'], files['file2_yaml_nested'], 'plain') == expected
+def test_plain_flat(files):
+    with open(files['plain_flat']) as file:
+        expected = file.read()
+    assert generate_diff(files['file1_json_flat'], files['file2_json_flat'], 'plain') == expected
+    assert generate_diff(files['file1_yml_flat'], files['file2_yml_flat'], 'plain') == expected
+    assert generate_diff(files['file1_yaml_flat'], files['file2_yaml_flat'], 'plain') == expected
 
+
+def test_plain_nested(files):
+    with open(files['plain_nested']) as file:
+        expected = file.read()
+    assert generate_diff(files['file1_json_nested'], files['file2_json_nested'], 'plain') == expected
+    assert generate_diff(files['file1_yml_nested'], files['file2_yml_nested'], 'plain') == expected
+    assert generate_diff(files['file1_yaml_nested'], files['file2_yaml_nested'], 'plain') == expected
