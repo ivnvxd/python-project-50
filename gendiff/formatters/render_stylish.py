@@ -10,7 +10,6 @@ from gendiff.constants import (
 
     TEMPLATE_NESTED,
     TEMPLATE_STYLISH,
-    TEMPLATE_EMPTY
 )
 
 
@@ -86,10 +85,6 @@ def render_line(key: Any, value: Any, sign: str, depth: int) -> str:
         lines.append(TEMPLATE_STYLISH.format(
             indent, sign, key, render_dict(value, depth + 1)))
 
-    elif value == '':
-        lines.append(TEMPLATE_STYLISH.format(
-            indent, sign, key, ''))
-
     else:
         lines.append(TEMPLATE_STYLISH.format(
             indent, sign, key, convert(value)))
@@ -127,6 +122,8 @@ def convert(value: Any) -> str:
 
     if isinstance(value, bool):
         converted = str(value).lower()
+    elif value == '':
+        converted = ''
     elif value is None:
         converted = 'null'
     else:
