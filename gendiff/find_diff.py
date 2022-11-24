@@ -9,8 +9,9 @@ from gendiff.constants import (
 )
 
 
-def get_diff_tree(file1: dict, file2: dict) -> list:
-    """Calculates the difference between two files.
+def get_diff(file1: dict, file2: dict) -> list:
+    """
+    Calculates the difference between two files.
 
     :param file1: First file as the Python dict object.
     :param file2: Second file as the Python dict object.
@@ -32,7 +33,7 @@ def get_diff_tree(file1: dict, file2: dict) -> list:
             node = add_node(key, UNCHANGED, old_value=file1[key])
 
         elif isinstance(file1[key], dict) and isinstance(file2[key], dict):
-            child = get_diff_tree(file1[key], file2[key])
+            child = get_diff(file1[key], file2[key])
             node = add_node(key, NESTED, children=child)
 
         else:

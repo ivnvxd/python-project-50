@@ -13,8 +13,9 @@ from gendiff.constants import (
 )
 
 
-def render_plain(diff: list, source: str = '') -> str:
-    """Render the difference tree in "plain" format.
+def make_plain(diff: list, source: str = '') -> str:
+    """
+    Render the difference tree in "plain" format.
 
     :param diff: Difference tree.
     :param source: Full path to current node.
@@ -52,7 +53,7 @@ def render_plain(diff: list, source: str = '') -> str:
 
         elif node['type'] == NESTED:
             lines.append(
-                render_plain(node['children'], path)
+                make_plain(node['children'], path)
             )
 
     return '\n'.join(lines)
