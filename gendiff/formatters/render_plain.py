@@ -15,35 +15,46 @@ from gendiff.constants import (
 
 def render_plain(diff: list, source: str = '') -> str:
     """
-    Rendering the difference tree in plain format.
+    Rendering the difference tree in the "plain" format and return as a string.
 
     :param diff: Difference tree.
     :param source: Full path to current node.
-    :return: String of difference visualization in plain format.
+    :return: String of difference visualization in "plain" format.
     """
 
     lines = []
+    diff.sort(key=lambda node: node['key'])
 
     for node in diff:
 
         if source:
-            path = TEMPLATE_PLAIN_PATH.format(source, node['key'])
+            path = TEMPLATE_PLAIN_PATH.format(source,
+                                              node['key'])
         else:
             path = node['key']
 
         if node['type'] == REMOVED:
-            lines.append(TEMPLATE_PLAIN_REMOVED.format(path))
+            lines.append(
+                TEMPLATE_PLAIN_REMOVED.format(path)
+            )
 
         elif node['type'] == ADDED:
-            lines.append(TEMPLATE_PLAIN_ADDED.format(
-                path, convert(node['new_value'])))
+            lines.append(
+                TEMPLATE_PLAIN_ADDED.format(path,
+                                            convert(node['new_value']))
+            )
 
         elif node['type'] == UPDATED:
-            lines.append(TEMPLATE_PLAIN_UPDATED.format(
-                path, convert(node['old_value']), convert(node['new_value'])))
+            lines.append(
+                TEMPLATE_PLAIN_UPDATED.format(path,
+                                              convert(node['old_value']),
+                                              convert(node['new_value']))
+            )
 
         elif node['type'] == NESTED:
-            lines.append(render_plain(node['children'], path))
+            lines.append(
+                render_plain(node['children'], path)
+            )
 
     return '\n'.join(lines)
 

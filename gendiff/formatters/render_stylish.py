@@ -16,41 +16,48 @@ from gendiff.constants import (
 
 def render_stylish(diff: list) -> str:
     """
-    Rendering the difference tree in stylish format.
+    Rendering the difference tree in the "stylish" format and return as a string.
 
     :param diff: Difference tree.
-    :return: String of difference visualization in stylish format.
+    :return: String of difference visualization in "stylish" format.
     """
 
     def iter_(data: Any, depth: int = 0) -> str:
 
         lines = []
         indent = '    ' * depth
+        data.sort(key=lambda node: node['key'])
 
         for node in data:
 
             if node['type'] == REMOVED:
                 lines.append(render_line(
-                    node['key'], node['old_value'], '-', depth))
+                    node['key'], node['old_value'], '-', depth)
+                )
 
             elif node['type'] == ADDED:
                 lines.append(render_line(
-                    node['key'], node['new_value'], '+', depth))
+                    node['key'], node['new_value'], '+', depth)
+                )
 
             elif node['type'] == UNCHANGED:
                 lines.append(render_line(
-                    node['key'], node['old_value'], ' ', depth))
+                    node['key'], node['old_value'], ' ', depth)
+                )
 
             elif node['type'] == UPDATED:
                 lines.append(render_line(
-                    node['key'], node['old_value'], '-', depth))
+                    node['key'], node['old_value'], '-', depth)
+                )
                 lines.append(render_line(
-                    node['key'], node['new_value'], '+', depth))
+                    node['key'], node['new_value'], '+', depth)
+                )
 
             elif node['type'] == NESTED:
                 lines.append(TEMPLATE_NESTED.format(
                     indent, node['key'], iter_(node['children'],
-                                               depth + 1)))
+                                               depth + 1)
+                ))
 
         result = itertools.chain("{", lines, [indent + "}"])
 
