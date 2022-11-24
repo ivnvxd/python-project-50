@@ -16,7 +16,7 @@ from gendiff.constants import (
 
 def render_stylish(diff: list) -> str:
     """
-    Rendering the difference tree in the "stylish" format and return as a string.
+    Rendering the difference tree in "stylish".
 
     :param diff: Difference tree.
     :return: String of difference visualization in "stylish" format.

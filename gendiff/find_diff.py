@@ -11,7 +11,7 @@ from gendiff.constants import (
 
 def get_diff_tree(file1: dict, file2: dict) -> list:
     """
-    Takes two files as dictionaries and finds the difference between them.
+    Calculates the difference between two files.
 
     :param file1: First file as the Python dict object.
     :param file2: Second file as the Python dict object.
