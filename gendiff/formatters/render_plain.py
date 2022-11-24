@@ -56,7 +56,9 @@ def make_plain(diff: list, source: str = '') -> str:
                 make_plain(node['children'], path)
             )
 
-    return '\n'.join(lines)
+    result = '\n'.join(lines)
+
+    return result
 
 
 def convert(value: Any) -> str:

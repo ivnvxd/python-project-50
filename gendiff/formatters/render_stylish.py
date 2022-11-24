@@ -87,8 +87,8 @@ def render_line(key: Any, value: Any, sign: str, depth: int) -> str:
             indent, sign, key, render_dict(value, depth + 1)))
 
     elif value == '':
-        lines.append(TEMPLATE_EMPTY.format(
-            indent, sign, key))
+        lines.append(TEMPLATE_STYLISH.format(
+            indent, sign, key, ''))
 
     else:
         lines.append(TEMPLATE_STYLISH.format(
