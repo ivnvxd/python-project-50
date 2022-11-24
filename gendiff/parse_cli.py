@@ -2,7 +2,8 @@ import argparse
 
 from gendiff.constants import (
     STYLISH,
-    PLAIN
+    PLAIN,
+    JSON
 )
 
 
@@ -26,7 +27,7 @@ def parse_arguments():
         '-f', '--format',
         type=str,
         help="set format of output (default: 'stylish')",
-        choices=[STYLISH, PLAIN],
+        choices=[STYLISH, PLAIN, JSON],
         default=STYLISH
     )
 

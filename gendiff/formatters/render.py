@@ -1,9 +1,11 @@
-from gendiff.formatters.stylish import render_stylish
-from gendiff.formatters.plain import render_plain
+from gendiff.formatters.render_stylish import render_stylish
+from gendiff.formatters.render_plain import render_plain
+from gendiff.formatters.render_json import render_json
 
 from gendiff.constants import (
     STYLISH,
-    PLAIN
+    PLAIN,
+    JSON
 )
 
 
@@ -20,3 +22,5 @@ def render(diff: list, format: str) -> str:
         return render_stylish(diff)
     elif format == PLAIN:
         return render_plain(diff)
+    elif format == JSON:
+        return render_json(diff)

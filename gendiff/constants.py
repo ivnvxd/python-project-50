@@ -1,5 +1,6 @@
 STYLISH = 'stylish'
 PLAIN = 'plain'
+JSON = 'json'
 
 ADDED = 'added'
 REMOVED = 'removed'

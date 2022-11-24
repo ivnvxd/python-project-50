@@ -2,7 +2,7 @@ install:
 	poetry install
 
 test:
-	poetry run pytest
+	poetry run pytest -v
 
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml
@@ -31,3 +31,7 @@ stylish:
 plain:
 	poetry run gendiff --f plain ./tests/fixtures/json/file1_flat.json ./tests/fixtures/json/file2_flat.json
 	poetry run gendiff --format plain ./tests/fixtures/json/file1_nested.json ./tests/fixtures/json/file2_nested.json
+
+json:
+	poetry run gendiff --f json ./tests/fixtures/json/file1_flat.json ./tests/fixtures/json/file2_flat.json
+	poetry run gendiff --format json ./tests/fixtures/json/file1_nested.json ./tests/fixtures/json/file2_nested.json
