@@ -11,8 +11,7 @@ from gendiff.constants import (
 
 
 def render_json(diff: list) -> str:
-    """
-    Rendering the difference tree in "json".
+    """Render the difference tree in "json" format.
 
     :param diff: Difference tree.
     :return: String of difference visualization in "json" format.

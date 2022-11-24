@@ -14,8 +14,7 @@ from gendiff.constants import (
 
 
 def render_plain(diff: list, source: str = '') -> str:
-    """
-    Rendering the difference tree in "plain".
+    """Render the difference tree in "plain" format.
 
     :param diff: Difference tree.
     :param source: Full path to current node.
