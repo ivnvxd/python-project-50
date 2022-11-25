@@ -1,5 +1,6 @@
 <div align="center">
 
+<img src="img/logo.png" alt="logo" width="200" height="auto" />
 <h1>Difference Generator</h1>
 
 <p>
@@ -43,7 +44,7 @@ Calculate the difference between two files
 
 ## About
 
-Difference Generator is a program that determines the difference between two data structures. This is a popular task, for which there are many online services, such as http://www.jsondiff.com/. 
+Difference Generator is a tool that determines the difference between two data structures. This is a popular task, for which there are many online services, such as http://www.jsondiff.com/. 
 
 Such a mechanism, for example, is used when outputting tests or when automatically tracking changes in configuration files.
 
@@ -57,7 +58,7 @@ Section "group2" was removed
 ```
 
 ### Features:
-- [X] Suppported file formats: JSON, YAML.
+- [X] Supported file formats: JSON, YAML.
 - [X] Output as plain text, structured text or JSON.
 - [X] Can be used as CLI tool or external library.
 
