@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="img/img.png" alt="logo" width="300" height="auto" />
+<img src="https://raw.githubusercontent.com/venyxD/venyxD/master/img/gendiff.png" alt="logo" width="300" height="auto" />
 <h1>Difference Generator</h1>
 
 <p>
@@ -21,8 +21,7 @@ Calculate the difference between two files
 </p>
 </div>
 
-<details>
-  <summary style="font-size:larger;"><b>Table of Contents</b></summary>
+<details><summary style="font-size:larger;"><b>Table of Contents</b></summary>
 
 * [About](#about)
   * [Features](#features)
@@ -32,23 +31,25 @@ Calculate the difference between two files
   * [Package](#package)
 * [Usage](#usage)
 * [Demo](#demo)
-  * [Stylish format](#_stylish-format_)
-  * [Plain format](#_plain-format_)
-  * [JSON format](#_json-format_)
+  * [Stylish format](#stylish-format)
+  * [Plain format](#plain-format)
+  * [JSON format](#json-format)
 * [Additionally](#additionally)
   * [Dependencies](#dependencies)
   * [Dev Dependencies](#dev-dependencies)
   * [Makefile Commands](#makefile-commands)
   * [Project Tree](#project-tree)
+
 </details>
 
 ## About
 
-Difference Generator is a tool that determines the difference between two data structures. This is a popular task, for which there are many online services, such as http://www.jsondiff.com/. 
+Difference Generator is a tool that determines the difference between two data structures. This is a popular task, for which there are many online services, such as http://www.jsondiff.com/.
 
 Such a mechanism, for example, is used when outputting tests or when automatically tracking changes in configuration files.
 
 Example:
+
 ```bash
 gendiff --format plain filepath1.json filepath2.yml
 
@@ -58,11 +59,13 @@ Section "group2" was removed
 ```
 
 ### Features:
-- [X] Supported file formats: JSON, YAML.
-- [X] Output as plain text, structured text or JSON.
-- [X] Can be used as CLI tool or external library.
+
+* [X] Supported file formats: JSON, YAML.
+* [X] Output as plain text, structured text or JSON.
+* [X] Can be used as CLI tool or external library.
 
 ### Built With
+
 * Python
 * Poetry
 * PyYAML
@@ -72,6 +75,7 @@ Section "group2" was removed
 * argparse
 
 ---
+
 ## Installation
 
 ### Prerequisites
@@ -96,10 +100,13 @@ To use the package, you need to clone the repository to your computer. This is d
 ```bash
 >> git clone https://github.com/venyxD/python-project-50.git
 ```
+
 Then you have to build the package and install it:
+
 ```bash
 >> cd python-project-50
 ```
+
 ```bash
 >> poetry build
 >> python3 -m pip install --user dist/*.whl
@@ -108,18 +115,20 @@ Then you have to build the package and install it:
 ---
 
 ## Usage
+
 Difference Generator can be used as CLI tool or as an external library.
 
-#### As external library
+### As external library
 
 ```python
 from gendiff import generate_diff
 diff = generate_diff(file_path1, file_path2, file_format)
 ```
 
-#### As CLI tool
+### As CLI tool
 
 The general usage is (both absolute and relative paths to files are supported):
+
 ```bash
 >> gendiff [-f file_format] file_path1 file_path2
 ```
@@ -166,17 +175,20 @@ The absence of a plus or minus indicates that the key is in both files, and its 
 }
 ```
 
-##### :diamonds: Compare two flat JSON and/or YAML files: _stylish_ format
+#### :diamonds: Compare two flat JSON and/or YAML files: _stylish_ format
+
 <a href="https://asciinema.org/a/540234" target="_blank"><img src="https://asciinema.org/a/540234.svg" width="300"/></a>
-##### :diamonds: Compare two nested JSON and/or YAML files: _stylish_ format
+
+#### :diamonds: Compare two nested JSON and/or YAML files: _stylish_ format
+
 <a href="https://asciinema.org/a/540237" target="_blank"><img src="https://asciinema.org/a/540237.svg" width="300"/></a>
 
 ### _Plain format_
 
 _Plain_ format reflects the situation as if we had combined the second object with the first one.
 
-- If the new value of the property is a complex value, ```[complex value]``` is provided.
-- If the property is nested, then the entire path to the root is displayed, not just including the parent.
+* If the new value of the property is a complex value, ```[complex value]``` is provided.
+* If the property is nested, then the entire path to the root is displayed, not just including the parent.
 
 ```bash
 >> gendiff --format plain file_path1.json file_path2.json
@@ -187,9 +199,12 @@ Property 'timeout' was updated. From 50 to 20
 Property 'verbose' was added with value: true
 ```
 
-##### :diamonds: Compare two flat JSON and/or YAML files: _plain_ format
+#### :diamonds: Compare two flat JSON and/or YAML files: _plain_ format
+
 <a href="https://asciinema.org/a/540238" target="_blank"><img src="https://asciinema.org/a/540238.svg" width="300"/></a>
-##### :diamonds: Compare two nested JSON and/or YAML files: _plain_ format
+
+#### :diamonds: Compare two nested JSON and/or YAML files: _plain_ format
+
 <a href="https://asciinema.org/a/540239" target="_blank"><img src="https://asciinema.org/a/540239.svg" width="300"/></a>
 
 ### _JSON format_
@@ -225,9 +240,13 @@ JSON (JavaScript Object Notation) is a standard text format for representing str
     }
 }
 ```
-##### :diamonds: Compare two flat JSON and/or YAML files: _JSON_ format
+
+#### :diamonds: Compare two flat JSON and/or YAML files: _JSON_ format
+
 <a href="https://asciinema.org/a/Q06wRrClwU6BoZrzda5RMjJWX" target="_blank"><img src="https://asciinema.org/a/Q06wRrClwU6BoZrzda5RMjJWX.svg" width="300"/></a>
-##### :diamonds: Compare two nested JSON and/or YAML files: _JSON_ format
+
+#### :diamonds: Compare two nested JSON and/or YAML files: _JSON_ format
+
 <a href="https://asciinema.org/a/540241" target="_blank"><img src="https://asciinema.org/a/540241.svg" width="300"/></a>
 
 ---
@@ -235,15 +254,18 @@ JSON (JavaScript Object Notation) is a standard text format for representing str
 ## Additionally
 
 ### Dependencies
-- python = "^3.10"
-- PyYAML = "^6.0"
+
+* python = "^3.10"
+* PyYAML = "^6.0"
 
 ### Dev Dependencies
-- flake8 = "^5.0.4"
-- pytest = "^7.2.0"
-- pytest-cov = "^4.0.0"
+
+* flake8 = "^5.0.4"
+* pytest = "^7.2.0"
+* pytest-cov = "^4.0.0"
 
 ### Makefile Commands
+
 <dl>
     <dt><code>make build</code></dt>
     <dd>Build the Poetry package.</dd>    
@@ -259,7 +281,8 @@ JSON (JavaScript Object Notation) is a standard text format for representing str
     <dd>Validate structure of <code>pyproject.toml</code> file, check code with tests and linter.</dd>
 </dl>
 
-### Project Tree
+<a name="project-tree"></a>
+<details><summary style="font-size:larger;"><b>Project Tree</b></summary>
 
 ```bash
 .
@@ -295,6 +318,9 @@ JSON (JavaScript Object Notation) is a standard text format for representing str
     ├── test_cli_parse.py
     └── test_gendiff.py
 ```
+
+</details>
+
 ---
 
 :octocat: This is the second training project of the ["Python Developer"](https://ru.hexlet.io/programs/python) course on [Hexlet.io](https://hexlet.io)
