@@ -281,6 +281,8 @@ JSON (JavaScript Object Notation) is a standard text format for representing str
     <dd>Validate structure of <code>pyproject.toml</code> file, check code with tests and linter.</dd>
 </dl>
 
+---
+
 <a name="project-tree"></a>
 <details><summary style="font-size:larger;"><b>Project Tree</b></summary>
 
