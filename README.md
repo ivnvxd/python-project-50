@@ -327,5 +327,5 @@ JSON (JavaScript Object Notation) is a standard text format for representing str
 
 :octocat: This is the second training project of the ["Python Developer"](https://ru.hexlet.io/programs/python) course on [Hexlet.io](https://hexlet.io)
 
-> GitHub [@venyxD](https://github.com/venyxD) &nbsp;&middot;&nbsp;
+> GitHub [@ivnvxd](https://github.com/ivnvxd) &nbsp;&middot;&nbsp;
 > LinkedIn [@Andrey Ivanov](https://www.linkedin.com/in/abivanov/)
