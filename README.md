@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/venyxD/venyxD/master/img/gendiff.png" alt="logo" width="300" height="auto" />
+<img src="https://raw.githubusercontent.com/ivnvxd/ivnvxd/master/img/h_gendiff.png" alt="logo" width="270" height="auto" />
 <h1>Difference Generator</h1>
 
 <p>
